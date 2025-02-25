@@ -1,0 +1,30 @@
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 70px; /* Below the header */
+    left: 0;
+    width: 250px;
+    background-color: #f4f4f4;
+    height: calc(100vh - 70px); /* Full height minus header */
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color:white;
+    font-size: 18px;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #1d2b38; /* Hover effect for links */
+  }
+  
