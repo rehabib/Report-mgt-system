@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/Report.css"; 
 function Reports() {
   return (
     <div className="report-box">

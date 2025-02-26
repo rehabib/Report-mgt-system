@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -35,14 +35,14 @@ function App() {
           element={
             <ProtectedRoute>
               <div className="layout">
-                <Header setShowAbout={setShowAbout} />
+                <Navbar setShowAbout={setShowAbout} />
                 <div className="main-container">
                   <Sidebar />
                   <main className="content">
                     <div className="report-container">
                       <Reports />
                     </div>
-                  </main>
+                  </main> 
                 </div>
                 <Footer />
               </div>
@@ -52,9 +52,9 @@ function App() {
 
         {/* Authentication Pages */}
         <Route path="/login" element={<Login />} />
-        <Route path="/logout"element={<Logout/>}/>
+        <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
-        
+
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
