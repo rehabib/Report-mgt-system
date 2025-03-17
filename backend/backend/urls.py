@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from api.views import CreateUserView, PasswordResetView  # Import your custom views
+from api.views import CreateUserView, PasswordResetView  # Now correctly imported
 
 urlpatterns = [
     path("admin/", admin.site.urls),  # Admin panel route
@@ -12,6 +12,3 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),  # Default API Auth for DRF
     path("api/", include("api.urls")),  # Including your API app URLs
 ]
-
-
-

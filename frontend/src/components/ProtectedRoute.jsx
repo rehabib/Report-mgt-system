@@ -16,7 +16,7 @@ function ProtectedRoute({ children }) {
         }
 
         try {
-            const res = await api.post("/api/token/refresh/", { refresh: refreshToken });
+            const res = await api.post("/api/token/refresh/", { username:username,passowrd:password});
             if (res.status === 200) {
                 localStorage.setItem(ACCESS_TOKEN, res.data.access);
                 setIsAuthorized(true);
@@ -68,3 +68,23 @@ function ProtectedRoute({ children }) {
 }
 
 export default ProtectedRoute;
+
+
+export const register=async()=>{
+    const {username,password}=req.body;
+    try {
+        if(!password || username){
+            res.status(400).json("pass or usrtname ");
+            if(User.find(username)){
+                res.status(400).json("user exist");
+            }
+        }
+        username({usernam,password});
+        user.save();
+        res.sttus(200).json(user)
+    
+    } catch (error) {
+        
+    }
+
+}
