@@ -39,11 +39,11 @@ urlpatterns = [
     path('months/<int:pk>/', MonthsDetailView.as_view(), name='months-detail'),
     path('daily-reports/<int:pk>/', DailyReportDetailView.as_view(), name='daily-report-detail'),
 
-    path('strategicGoal/', AStrategicGoalListView.as_view(), name='strategicGoal-list'),
-    path('strategicGoal/<int:pk>/', AStrategicGoalDetailView.as_view(), name='strategicGoal-detail'),
+    path('astrategicGoal/', AStrategicGoalListView.as_view(), name='astrategicGoal-list'),
+    path('astrategicGoal/<int:pk>/', AStrategicGoalDetailView.as_view(), name='astrategicGoal-detail'),
 
-    path('strategicGoal/', DStrategicGoalListView.as_view(), name='strategicGoal-list'),
-    path('strategicGoal/<int:pk>/', DStrategicGoalDetailView.as_view(), name='strategicGoal-detail'),
+    path('dstrategicGoal/', DStrategicGoalListView.as_view(), name='dstrategicGoal-list'),
+    path('dstrategicGoal/<int:pk>/', DStrategicGoalDetailView.as_view(), name='dstrategicGoal-detail'),
 
 
     path('yearData/', YearDataListView.as_view(), name='yearData-list'),

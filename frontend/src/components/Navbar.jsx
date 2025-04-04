@@ -39,6 +39,8 @@ function Navbar({ setShowAbout }) {
         )}
       </div>
       </ul>
+      
+      
     </navbar>
   );
 }

@@ -13,7 +13,8 @@ const DirectorBSCPlan = ({ isOpen, onClose }) => {
         </div>
         <div class = "modal-body">
         <input type="text" placeholder="SerialNumber" />
-        <input type="text" placeholder="Perspective" />
+        <button type="button"class="dropbtn" placeholder="Perspective" />
+        <a href ="#"></a>
         <input type="text" placeholder="Strategic_Goals" />
         <input type="text" placeholder="Goal_Value" />
         <input type="text" placeholder="Measurement" />
