@@ -1,14 +1,16 @@
+
+/* Sidebar */
 .sidebar {
-  position: fixed; /* Fix the sidebar position */
-  top: 60px; /* Adjust according to navbar height */
-  left: 0;
-  top: 70px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+   /* Full height minus navbar and footer */
   width: 250px;
-  height: calc(100vh - 140px); /* Full height minus navbar */
   background-color: #2c3e50;
   color: white;
-  padding: 20px;
-  overflow-y: auto;
+  position: fixed;
+  z-index: 10;
+
 }
 
 /* Sidebar Navigation List */
@@ -37,13 +39,7 @@
   color: #8af814; /* Hover effect */
 }
 
-/* Main Content Styling */
-.main-content {
-  margin-left: 250px; /* Same as sidebar width */
-  padding: 20px;
-  background-color: #f4f4f4;
-  min-height: 100vh; /* Ensure it stretches */
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -57,7 +53,4 @@
       padding: 6px;
   }
 
-  .main-content {
-      margin-left: 60px; /* Adjust margin */
-  }
 }

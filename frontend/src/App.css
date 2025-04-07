@@ -8,16 +8,9 @@ html, body {
   flex-direction: column;
 }
 
-/* Layout adjustment */
-.layout {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow-y: auto; /* Enable vertical scrolling */
-}
 
 .main-container {
-  margin-left: 60px; /* Adjust margin */
+  margin-left: 50px; /* Adjust margin */
 }
 
 /* Responsive Design */
@@ -27,3 +20,11 @@ html, body {
     padding: 10px;
   }
 }
+
+
+
+
+
+
+
+ 

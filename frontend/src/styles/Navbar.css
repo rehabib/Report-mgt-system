@@ -1,15 +1,16 @@
 /* Replace your <navbar> selector with nav */
-nav.navbar {
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 10px;
   background-color: #1c1f26;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
   z-index: 10;
+  margin-left: 5px;
+  margin-right: 5px;
+ 
 }
 
 /* Common Styling */
@@ -31,7 +32,7 @@ nav.navbar {
   cursor: pointer;
 }
 
-.navbar-menu-left,
+
 .navbar-menu-right {
   display: flex;
   align-items: center;
@@ -39,7 +40,7 @@ nav.navbar {
 }
 
 .navbar-menu-left {
-  margin-left: 80px;
+  margin-left: 180px;
   gap: 55px;
 }
 .navbar-menu-left a {
@@ -50,17 +51,38 @@ nav.navbar {
   color: #171717;
 }
 
+
 .navbar-menu-right {
-  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 44px; 
+  list-style: none;
+  padding-right: 20px;
+  
 }
-.navbar-menu-right a {
+
+
+
+.navbar-button {
+  padding: 8px 16px;
+  background-color: #004085; /* dark blue */
+  color: #fff;
+  border: none;
+  margin-right:45px;
+  border-radius: 6px;
   text-decoration: none;
-  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Auth Dropdown */
 .dropdown-container {
   position: relative;
+}
+.auth-dropdown-container{
+  position:relative;
+  display:inline-block;
 }
 
 .auth-toggle-button {
@@ -90,15 +112,35 @@ nav.navbar {
   gap: 10px;
   z-index: 1000;
 }
-
-.auth-link {
-  color: blue;
+.auth-links {
+  position: absolute;
+  top: 60px;
+  right: 5px; /* opens towards left if needed */
+  background-color: white;
+  color: #1c1f26;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-14%);
+}
+.auth-links a {
+  color: #1c1f26;
   text-decoration: none;
   font-weight: 600;
+  padding: 8px 12px;
+  display: block;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-.auth-link:hover {
-  text-decoration: underline;
+.auth-links a:hover {
+  background-color: #f0f0f0;
+  color: #000;
 }
 
 /* Responsive */
@@ -111,6 +153,10 @@ nav.navbar {
   }
 
   .navbar-menu-right {
-    margin-left: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
   }
+  
 }
