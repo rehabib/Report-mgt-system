@@ -29,10 +29,10 @@ function ForgotPassword() {
       <h2>Forgot Password</h2>
       <form onSubmit={handleSubmit} className="forgot-password-form">
         <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
+          type="username"
+          value={username}
+          onChange={(e) => setUserName(e.target.value)}
+          placeholder="Enter your Username"
         />
         <button type="submit" disabled={loading}>Send Reset Link</button>
       </form>

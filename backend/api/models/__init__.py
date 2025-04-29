@@ -1,7 +1,7 @@
-from .bscFiveYearPlan import BSC_2005FiveYearPlan
+from .agency_plan import AgencyPlan
 from .department import Department
 from .goals import Goals
-from .itplan import ITPlan
+from .director_plan import DirectorPlan
 from .measurement import Measurement
 from .perspective import Perspective
 from .reports import MonthlyReport
@@ -10,3 +10,6 @@ from .reports import Months
 from .strategicGoal import AStrategicGoal
 from .strategicGoal import DStrategicGoal
 from .yearData import YearData
+
+from .user_profile import Profile
+

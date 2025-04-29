@@ -1,8 +1,8 @@
 from django.urls import path
-from .views.bscFiveYearPlan import BscFiveYearPlanListView, BscFiveYearPlanDetailView
+from .views.agency_plan import AgencyPlanListView, AgencyPlanDetailView
 from .views.department import DepartmentListView, DepartmentDetailView
 from .views.goals import GoalsListView, GoalsDetailView
-from .views.itplan import ITPlanListView, ITPlanDetailView
+from .views.director_plan import DirectorPlanListView, DirectorPlanDetailView
 from .views.measurement import MeasurementListView, MeasurementDetailView
 from .views.perspective import PerspectiveListView, PerspectiveDetailView
 from .views.reports import MonthlyReportListView, MonthlyReportDetailView
@@ -13,8 +13,8 @@ from .views.strategicGoal import DStrategicGoalListView, DStrategicGoalDetailVie
 from .views.yearData import YearDataListView, YearDataDetailView
 
 urlpatterns = [
-    path('bscFiveYearPlan/', BscFiveYearPlanListView.as_view(), name='bscFiveYearPlan-list'),
-    path('bscFiveYearPlan/<int:pk>/', BscFiveYearPlanDetailView.as_view(), name='bscFiveYearPlan-detail'),
+    path('agency_plan/', AgencyPlanListView.as_view(), name='agency_plan-list'),
+    path('agency_plan/<int:pk>/', AgencyPlanDetailView.as_view(), name='agency_plan-detail'),
 
     path('department/', DepartmentListView.as_view(), name='department-list'),
     path('department/<int:pk>/', DepartmentDetailView.as_view(), name='department-detail'),
@@ -22,8 +22,8 @@ urlpatterns = [
     path('goals/', GoalsListView.as_view(), name='goals-list'),
     path('goals/<int:pk>/', GoalsDetailView.as_view(), name='goals-detail'),
 
-    path('itplan/', ITPlanListView.as_view(), name='itplan-list'),
-    path('itplan/<int:pk>/', ITPlanDetailView.as_view(), name='itplan-detail'),
+    path('director_plan/', DirectorPlanListView.as_view(), name='director_plan-list'),
+    path('director_plan/<int:pk>/', DirectorPlanDetailView.as_view(), name='director_plan-detail'),
 
     path('measurement/', MeasurementListView.as_view(), name='measurement-list'),
     path('measurement/<int:pk>/', MeasurementDetailView.as_view(), name='measurement-detail'),

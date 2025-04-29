@@ -102,7 +102,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='ITPlan',
+            name='DirectorPlan',
             fields=[
                 ('serial_number', models.AutoField(primary_key=True, serialize=False)),
                 ('goal_value', models.FloatField()),
@@ -146,7 +146,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='BSC_2005FiveYearPlan',
+            name='AgencyPlan',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('base_value', models.FloatField()),

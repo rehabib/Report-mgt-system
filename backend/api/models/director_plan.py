@@ -4,7 +4,7 @@ from .perspective import Perspective
 from .strategicGoal import DStrategicGoal
 from .measurement import Measurement
 
-class ITPlan(models.Model):
+class DirectorPlan(models.Model):
     serial_number = models.AutoField(primary_key=True)
     perspective = models.ForeignKey(Perspective, on_delete=models.CASCADE)
     strategic_goal = models.ForeignKey(DStrategicGoal, on_delete=models.CASCADE)

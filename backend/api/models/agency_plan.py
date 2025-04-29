@@ -7,7 +7,7 @@ from .measurement import Measurement
 from .yearData import YearData
 
 
-class BSC_2005FiveYearPlan(models.Model):
+class AgencyPlan(models.Model):
     perspective = models.ForeignKey(Perspective, on_delete=models.CASCADE)
     astrategic_goal = models.ForeignKey(AStrategicGoal, on_delete=models.CASCADE)
     measurement = models.ForeignKey(Measurement, on_delete=models.CASCADE)

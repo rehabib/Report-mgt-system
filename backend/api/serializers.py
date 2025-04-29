@@ -19,10 +19,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 from .models import (
-    BSC_2005FiveYearPlan,
+    AgencyPlan,
     Department,
     Goals,
-    ITPlan,
+    DirectorPlan,
     Measurement,
     Perspective,
     Months,
@@ -77,26 +77,26 @@ class DStrategicGoalSerializer(serializers.ModelSerializer):
         model = DStrategicGoal
         fields = ['id', 'strategic_goal', 'goal']
 
-# BSC_2005FiveYearPlan Serializer
-class BSC_2005FiveYearPlanSerializer(serializers.ModelSerializer):
+# AgencyPlan Serializer
+class AgencyPlanSerializer(serializers.ModelSerializer):
     perspective = PerspectiveSerializer()
     astrategic_goal = AStrategicGoalSerializer()
     measurement = MeasurementSerializer()
     year = YearDataSerializer()
 
     class Meta:
-        model = BSC_2005FiveYearPlan
+        model = AgencyPlan
         fields = '__all__'
 
-# ITPlan Serializer
-class ITPlanSerializer(serializers.ModelSerializer):
+# directorPlan Serializer
+class DirectorPlanSerializer(serializers.ModelSerializer):
     perspective = PerspectiveSerializer()
     strategic_goal = DStrategicGoalSerializer()
     measurement = MeasurementSerializer()
     year = YearDataSerializer()
 
     class Meta:
-        model = ITPlan
+        model = DirectorPlan
         fields = '__all__'
 
 # Months Serializer

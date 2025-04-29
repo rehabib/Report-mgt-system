@@ -16,5 +16,5 @@ class DStrategicGoal(models.Model):
         return self.strategic_goal  
     
 
- ##Agency Strategic Goals relate to the Five-Year Balanced Scorecard.
+ ##Agency Strategic Goals relate to the Agency.
  ##Director Strategic Goals relate to the IT Plan and department-level reports.   
