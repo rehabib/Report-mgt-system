@@ -5,9 +5,11 @@ from .strategicGoal import AStrategicGoal
 from .perspective import Perspective
 from .measurement import Measurement
 from .yearData import YearData
+from .user_profile import UserProfile
 
 
 class AgencyPlan(models.Model):
+    agency = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     perspective = models.ForeignKey(Perspective, on_delete=models.CASCADE)
     astrategic_goal = models.ForeignKey(AStrategicGoal, on_delete=models.CASCADE)
     measurement = models.ForeignKey(Measurement, on_delete=models.CASCADE)

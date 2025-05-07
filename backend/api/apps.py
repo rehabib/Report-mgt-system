@@ -7,9 +7,5 @@ class ApiConfig(AppConfig):
 
 
 
-class AccountsConfig(AppConfig):
-    name = 'accounts'
 
-    def ready(self):
-        import accounts.signals  # This imports the signals when the app is ready
 

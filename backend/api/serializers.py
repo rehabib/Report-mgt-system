@@ -2,18 +2,24 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
+    role = serializers.ChoiceField(choices=Profile.ROLE_CHOICES, write_only=True)
+    department_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
     class Meta:
         model = User
-        fields = ["id", "username", "password"]
+        fields = ["id", "username", "password","role", "department_id"]
         extra_kwargs = {
             "password": {"write_only": True},
             
         }
 
     def create(self, validated_data):
-        print(validated_data)
-
+        role = validated_data.pop('role')
+        department_id = validated_data.pop('department_id', None)
         user = User.objects.create_user(**validated_data)
+
+        department = Department.objects.get(id=department_id) if department_id else None
+        Profile.objects.create(user=user, role=role, department=department)
+
         return user
     
 

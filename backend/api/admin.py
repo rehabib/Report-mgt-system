@@ -17,4 +17,4 @@ admin.site.register(DirectorPlan)
 admin.site.register(MonthlyReport)
 admin.site.register(DailyReport)
 admin.site.register(Months)
-admin.site.register(Profile)
+
