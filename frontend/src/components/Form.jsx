@@ -40,7 +40,7 @@ function Form({ route, method }) {
         <form onSubmit={handleSubmit} className="form-container">
             <h1>{name}</h1>
             
-            {/* Email Field */}
+            {/* Username Field */}
             <label className="form-label">Username</label>
             <input
                 className="form-input"

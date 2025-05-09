@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import '.Styles/AgencyBSCModal.css'; // Optional CSS file
+import '.Styles/agency_planModal.css'; // Optional CSS file
 import axios from 'axios';
 
-const AgencyBSCModal = ({ isOpen, onClose }) => {
+const AgencyPlanModal = ({ isOpen, onClose }) => {
   const [perspectives, setPerspectives] = useState([]);
   const [strategicGoals, setStrategicGoals] = useState([]);
   const [measurements, setMeasurements] = useState([]);
@@ -36,7 +36,7 @@ const AgencyBSCModal = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = () => {
-    axios.post('/api/bscFiveYearPlan/', formData)
+    axios.post('/api/agency_plan/', formData)
       .then(res => {
         alert('Submitted successfully');
         onClose();
@@ -52,7 +52,7 @@ const AgencyBSCModal = ({ isOpen, onClose }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content max-w-4xl mx-auto p-6 bg-white shadow rounded-xl">
-        <h2 className="text-2xl font-bold mb-4 text-center">Agency's 5-Year Balanced Scorecard</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Agency's 5-year plan</h2>
 
         <div className="grid grid-cols-2 gap-4">
           {/* Dropdowns */}
@@ -111,4 +111,4 @@ const AgencyBSCModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default AgencyBSCModal;
+export default AgencyPlanModal;

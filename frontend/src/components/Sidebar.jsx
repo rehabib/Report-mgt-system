@@ -7,13 +7,13 @@ function Sidebar() {
     <div className="sidebar">
       <ul>
         <li>
-          <Link to="/agency-bsc">Agency BSC</Link>
+          <Link to="/agency_planModal">Agency Plan</Link>
         </li>
         <li>
-          <Link to="/director-bsc-plan">Director BSC Plan</Link>
+          <Link to="/director_planModal">Director Plan</Link>
         </li>
         <li>
-          <Link to="/administrator">Administrator</Link>
+          <Link to="/admin">Administrator</Link>
         </li>
         <li>
           <Link to="/additional-information">Additional Information</Link>
