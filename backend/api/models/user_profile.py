@@ -3,10 +3,11 @@ from django.contrib.auth.models import User
 from django.db import models
 from .department import Department
 
-class Profile(models.Model):
+class UserProfile(models.Model):
     ROLE_CHOICES = (
         ('director', 'Director'),
         ('agency', 'Agency'),
+        ('admin', 'Admin'),
     )
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)

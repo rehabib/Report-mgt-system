@@ -11,6 +11,7 @@ from .views.reports import DailyReportListView, DailyReportDetailView
 from .views.strategicGoal import AStrategicGoalListView, AStrategicGoalDetailView
 from .views.strategicGoal import DStrategicGoalListView, DStrategicGoalDetailView
 from .views.yearData import YearDataListView, YearDataDetailView
+from .views.authentication import ProfileView
 
 urlpatterns = [
     path('agency_plan/', AgencyPlanListView.as_view(), name='agency_plan-list'),
@@ -48,4 +49,5 @@ urlpatterns = [
 
     path('yearData/', YearDataListView.as_view(), name='yearData-list'),
     path('yearData/<int:pk>/', YearDataDetailView.as_view(), name='yearData-detail'),
+    path('profile/', ProfileView.as_view(), name='profile-view'),
 ]

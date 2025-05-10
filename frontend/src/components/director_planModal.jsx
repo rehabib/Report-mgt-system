@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '.Styles/directorbscplan.css';
+import '.Styles/directorplan.css';
 import axios from 'axios';
 
-const DirectorBSCPlanModal = ({ isOpen, onClose }) => {
+
+const DirectorPlanModal = ({ isOpen, onClose }) => {
   const [perspectives, setPerspectives] = useState([]);
   const [strategicGoals, setStrategicGoals] = useState([]);
   const [measurements, setMeasurements] = useState([]);
@@ -42,7 +43,7 @@ const DirectorBSCPlanModal = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = () => {
-    axios.post('/api/director-bsc-plan/', formData)
+    axios.post('/api/director_plan/', formData)
       .then(res => {
         alert('Plan submitted successfully!');
         onClose();
@@ -113,6 +114,16 @@ const DirectorBSCPlanModal = ({ isOpen, onClose }) => {
 
         {/* Footer buttons */}
         <div className="mt-6 flex justify-end gap-4">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">FirstRecord</button>
+          <button type="button" class="btn btn-primary">NextRecord</button>
+          <button type="button" class="btn btn-primary">LastRecord</button>
+          <button type="button" class="btn btn-primary">AddRecord</button>
+          <button type="button" class="btn btn-primary">DeleteRecord</button>
+          <button type="button" class="btn btn-primary">AddiInfo</button>
+          <button type="button" class="btn btn-primary">Preview</button>
+          </div>
+        <button onClick ={onClose}type="button" class="modal-close-btn" data-bs-dismiss="modal">Close</button>
           <button className="btn bg-gray-300 px-4 py-2 rounded" onClick={onClose}>Close</button>
           <button className="btn bg-green-600 text-white px-4 py-2 rounded" onClick={handleSubmit}>Submit</button>
         </div>
@@ -121,4 +132,4 @@ const DirectorBSCPlanModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default DirectorBSCPlanModal;
+export default DirectorPlanModal;

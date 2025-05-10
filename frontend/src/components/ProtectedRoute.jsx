@@ -79,7 +79,7 @@ export const register=async()=>{
                 res.status(400).json("user exist");
             }
         }
-        username({usernam,password});
+        username({username,password});
         user.save();
         res.sttus(200).json(user)
     
