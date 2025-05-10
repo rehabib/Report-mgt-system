@@ -1,8 +1,8 @@
 from .authentication import CreateUserView, PasswordResetView
-from .agency_plan import BscFiveYearPlanListView, BscFiveYearPlanDetailView
+from .agency_plan import AgencyPlanListView, AgencyPlanDetailView
 from .department import DepartmentListView, DepartmentDetailView
 from .goals import GoalsListView, GoalsDetailView
-from .director_plan import ITPlanListView, ITPlanDetailView
+from .director_plan import DirectorPlanListView, DirectorPlanDetailView
 from .measurement import MeasurementListView, MeasurementDetailView
 from .perspective import PerspectiveListView, PerspectiveDetailView
 from .reports import MonthlyReportListView, MonthlyReportDetailView
