@@ -1,16 +1,23 @@
+// src/components/Sidebar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Sidebar.css"; // Assuming you have a separate CSS file for sidebar
+import "../styles/Sidebar.css";
 
-function Sidebar() {
+export default function Sidebar() {
   return (
     <div className="sidebar">
       <ul>
         <li>
-          <Link to="/agency_planModal">Agency Plan</Link>
+          <Link to="/agency/login">Agency Login</Link>
         </li>
         <li>
-          <Link to="/director_planModal">Director Plan</Link>
+          <Link to="/agency-plan">Agency Plan</Link>
+        </li>
+        <li>
+          <Link to="/director/login">Director Login</Link>
+        </li>
+        <li>
+          <Link to="/director-plan">Director Plan</Link>
         </li>
         <li>
           <Link to="/admin">Administrator</Link>
@@ -22,5 +29,3 @@ function Sidebar() {
     </div>
   );
 }
-
-export default Sidebar;

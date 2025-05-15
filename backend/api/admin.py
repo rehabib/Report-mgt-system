@@ -3,7 +3,8 @@ from django.contrib import admin
 # Register your models here.
 # api/admin.py
 from .models import Department, Goals, Perspective, Measurement, DStrategicGoal, YearData, AgencyPlan, DirectorPlan, AStrategicGoal, MonthlyReport,DailyReport, Months
-from .models.user_profile import Profile
+from .models import Profile
+
 admin.site.register(Profile)
 admin.site.register(Department)
 admin.site.register(Goals)

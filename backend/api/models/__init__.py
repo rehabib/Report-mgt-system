@@ -1,5 +1,5 @@
 from .agency_plan import AgencyPlan
-from .user_profile import UserProfile
+from .user_profile import Profile
 from .department import Department
 from .goals import Goals
 from .director_plan import DirectorPlan

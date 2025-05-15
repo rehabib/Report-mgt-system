@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from .department import Department
 
-class UserProfile(models.Model):
+
+class Profile(models.Model):
     ROLE_CHOICES = (
         ('director', 'Director'),
         ('agency', 'Agency'),
