@@ -6,7 +6,7 @@ function LandingPage() {
   const navigate = useNavigate();
 
   const handleOpenClick = () => {
-    navigate("/login");  // This will navigate to the Login page initially
+    navigate("/home");  // This will navigate to the protected dashboard
   };
 
   return (

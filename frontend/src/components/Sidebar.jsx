@@ -6,12 +6,13 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <ul>
-        <li>
-          <Link to="/agency_planModal">Agency Plan</Link>
-        </li>
-        <li>
-          <Link to="/director_planModal">Director Plan</Link>
-        </li>
+      <li>
+     <Link to="/agency-plan">Agency Plan</Link>
+    </li>
+    <li>
+    <Link to="/director-plan">Director Plan</Link>
+    </li>
+
         <li>
           <Link to="/admin">Administrator</Link>
         </li>

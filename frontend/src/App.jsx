@@ -1,66 +1,89 @@
-import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// src/App.jsx
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
-import ProtectedRoute from "./components/ProtectedRoute";
-import Reports from "./pages/Reports";
-import LandingPage from "./pages/Landingpage"; 
+
+import LandingPage       from "./pages/Landingpage";
+import Reports           from "./pages/Reports";
+import AgencyLogin       from "./pages/AgencyLogin";
+import DirectorLogin     from "./pages/DirectorLogin";
+import Register          from "./pages/Register";
+import NotFound          from "./pages/NotFound";
+
+import Layout            from "./components/Layout";
+import ProtectedRoute    from "./components/ProtectedRoute";
+import AgencyPlanModal   from "./components/AgencyPlanModal";
+import DirectorPlanModal from "./components/DirectorPlanModal";
+
 import "./App.css";
 
 
-function Logout(){
-  localStorage.clear()
-  return<Navigate to ="/login"/>
-}
 
-function RegisterAndLogout(){
-  localStorage.clear()
-  return<Register/>
-}
-function App() {
-  const [showAbout, setShowAbout] = useState(false);
+const Logout = () => {
+  localStorage.clear();
+  return <Navigate to="/login" replace />;
+};
+
+const RegisterAndLogout = () => {
+  localStorage.clear();
+  return <Register />;
+};
+
+
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Landing Page */}
+        {/* ───────── Public landing ───────── */}
         <Route path="/" element={<LandingPage />} />
 
-        {/* Protected Dashboard Page (Requires Login) */}
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <div className="layout">
-                <Navbar setShowAbout={setShowAbout} />
-                <div className="main-container">
-                  <Sidebar />
-                  <main className="content">
-                    <div className="report-container">
-                      <Reports />
-                    </div>
-                  </main> 
-                </div>
-                <Footer />
-              </div>
-            </ProtectedRoute>
-          }
-        />
+        {/* ───────── Shell (Navbar + Sidebar + Footer) ───────── */}
+        <Route element={<Layout />}>
+          {/* dashboard */}
+          <Route
+            path="home"
+            element={
+              <ProtectedRoute>
+                <Reports />
+              </ProtectedRoute>
+            }
+          />
 
-        {/* Authentication Pages */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
+          {/* plan pages */}
+          <Route
+            path="agency-plan"
+            element={
+              <ProtectedRoute>
+                <AgencyPlanModal />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="director-plan"
+            element={
+              <ProtectedRoute>
+                <DirectorPlanModal />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* auth pages INSIDE the shell (remove if you want them outside) */}
+          <Route path="login"          element={<AgencyLogin />} />
+          <Route path="director-login" element={<DirectorLogin />} />
+        </Route>
+
+        {/* ───────── misc / auth OUTSIDE shell ───────── */}
+        {/* (keep these only if you want a bare-bones login screen) */}
+        {/* <Route path="/login"          element={<AgencyLogin />} /> */}
+        {/* <Route path="/director-login" element={<DirectorLogin />} /> */}
+
+        <Route path="/logout"   element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
 
-        {/* 404 Page */}
+        {/* ───────── 404 fallback ───────── */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
 }
-
-export default App;
